@@ -10,7 +10,8 @@
     "prestart": "npm run compile -- local",
     "start": "node scripts/local.js",
     "log": "node scripts/log.js",
-    "clone": "scripts/mkrepo.sh"
+    "clone": "scripts/mkrepo.sh",
+    "data": "node scripts/helpers/data.js"
   },
   "repository": {
     "type": "git",

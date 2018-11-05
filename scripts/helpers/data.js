@@ -102,4 +102,4 @@ function getData() {
 
 };
 
-getData()
+getData();
