@@ -11,7 +11,7 @@ var specs =  {
     'modified': process.argv.slice(2)[2] ? process.argv.slice(2)[2] : 'none'
 };
 
-
+var data = {};
 var path = '.build/';
 var version = 'v/' + Date.now();
     data.path = specs.deploy === false ? 'http://localhost:' + config.local.port : config.remote.url + '/' + config.remote.path + '/' + version;
