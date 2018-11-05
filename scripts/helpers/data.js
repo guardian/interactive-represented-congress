@@ -28,7 +28,7 @@ function fetchData(callback) {
 }
 
 function sortResults(data) {
-    var newData = [];
+    var newData = {};
 
     newData.demographics = {
         'house': data[0],
@@ -38,18 +38,60 @@ function sortResults(data) {
     return newData;
 }
 
+function compileChamber(chamber) {
+    compiledSeats = [];
+
+    for (var i in data.results[chamber]) {
+        var seat = data.results[chamber][i];
+
+        if (seat.winner) {
+            var demographics;
+
+            for (var d in data.demographics[chamber]) {
+                if (seat.winner === data.demographics[chamber][d].fullName) {
+                    var demographics = data.demographics[chamber][d];
+                }
+            }
+
+            if (demographics) {
+                compiledSeats.push(demographics);
+            } else {
+                console.log('no match for ' + seat.winner + ' in ' + seat.seat);
+            }
+        } else {
+            console.log('no winner for ' + seat.seat);
+        }
+    }
+
+    return compiledSeats;
+}
+
 function getData() {
     var isDone = false;
+
+    console.log('fetching demographics...');
 
     fetchData(function(result) {
         data = result;
         data = sortResults(data);
 
+        console.log('fetching results...');
         data.results = {};
         data.results.senate = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/senate.csv?update=21390644');
-        data.results.senate = csvjson.toObject(data.results.senate.getBody('utf8'))
+        data.results.senate = csvjson.toObject(data.results.senate.getBody('utf8'));
         data.results.house = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/house.csv?update=1234534');
         data.results.house = csvjson.toObject(data.results.house.getBody('utf8'))
+
+        console.log('building congressional demographics list...');
+
+        data.compiled = {};
+        console.log('buildling senate demographics list...');
+        data.compiled.senate = compileChamber('senate');
+        console.log('buildling house demographics list...');
+        data.compiled.house = compileChamber('house');
+
+        fs.mkdirsSync('./.data');
+        fs.writeFileSync('./.data/data.json', JSON.stringify(data.compiled));
 
         isDone = true;
     });
@@ -58,7 +100,6 @@ function getData() {
         return !isDone;
     });
 
-    return data;
 };
 
 getData()
