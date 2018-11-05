@@ -44,17 +44,17 @@ function compileChamber(chamber) {
     for (var i in data.results[chamber]) {
         var seat = data.results[chamber][i];
 
-        if (seat.winner) {
-            var demographics;
+        if (seat.winner !== '') {
+            var seatDemographic = null;
 
             for (var d in data.demographics[chamber]) {
                 if (seat.winner === data.demographics[chamber][d].fullName) {
-                    var demographics = data.demographics[chamber][d];
+                    seatDemographic = data.demographics[chamber][d];
                 }
             }
 
-            if (demographics) {
-                compiledSeats.push(demographics);
+            if (seatDemographic) {
+                compiledSeats.push(seatDemographic);
             } else {
                 console.log('no match for ' + seat.winner + ' in ' + seat.seat);
             }
