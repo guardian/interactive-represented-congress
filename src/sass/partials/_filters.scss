@@ -1,0 +1,24 @@
+.uit-filters {
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.uit-filter-set {
+    display: inline;
+}
+
+.uit-filter {
+    background-color: $c-light-grey;
+    padding: 0 3px 1px;
+
+    &:hover {
+        background-color: $c-grey;
+        cursor: pointer;
+    }
+
+    &.is-selected {
+        color: $c-white;
+        background-color: $c-red;
+    }
+}

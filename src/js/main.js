@@ -2,5 +2,7 @@
 window.$ = require('./vendor/jquery.js');
 
 var share = require('./modules/share.js');
+var filter = require('./modules/filter.js');
 
 share.init();
+filter.init();
