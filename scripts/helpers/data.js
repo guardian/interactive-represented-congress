@@ -2,6 +2,9 @@ var request = require('sync-request');
 var fs = require('fs-extra');
 var gsjson = require('google-spreadsheet-to-json');
 var deasync = require('deasync');
+var request = require('sync-request');
+var csvjson = require('csvjson');
+
 var config = require('../config.json');
 var userHome = require('user-home');
 var keys = require(userHome + '/.gu/interactives.json');
@@ -25,24 +28,28 @@ function fetchData(callback) {
 }
 
 function sortResults(data) {
-    if (data.length === 0) {
-        data = data[0]
-    } else {
-        data = {
-            'sheet1': data[0],
-            'sheet2': data[1]
-        }
+    var newData = [];
+
+    newData.demographics = {
+        'house': data[0],
+        'senate': data[1].concat(data[2])
     }
 
-    return data;
+    return newData;
 }
 
-module.exports = function getData() {
+function getData() {
     var isDone = false;
 
     fetchData(function(result) {
         data = result;
         data = sortResults(data);
+
+        data.results = {};
+        data.results.senate = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/senate.csv?update=21390644');
+        data.results.senate = csvjson.toObject(data.results.senate.getBody('utf8'))
+        data.results.house = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/house.csv?update=1234534');
+        data.results.house = csvjson.toObject(data.results.house.getBody('utf8'))
 
         isDone = true;
     });
@@ -53,3 +60,5 @@ module.exports = function getData() {
 
     return data;
 };
+
+getData()
