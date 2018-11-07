@@ -1,5 +1,9 @@
 .uit-map svg path {
-    fill: $c-grey;
+    fill: $c-red;
     stroke: $c-white;
     stroke-width: 1px;
+
+    &.is-filtered {
+        fill: $c-grey;
+    }
 }
