@@ -77,9 +77,9 @@ function getData() {
 
         console.log('fetching results...');
         data.results = {};
-        data.results.senate = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/senate.csv?update=21390644');
+        data.results.senate = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/senate.csv');
         data.results.senate = csvjson.toObject(data.results.senate.getBody('utf8'));
-        data.results.house = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/house.csv?update=1234534');
+        data.results.house = request('GET', 'https://gdn-cdn.s3.amazonaws.com/2018/11/midterms-results/csv/house.csv');
         data.results.house = csvjson.toObject(data.results.house.getBody('utf8'))
 
         console.log('building congressional demographics list...');
