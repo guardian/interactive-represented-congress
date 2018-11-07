@@ -1,9 +1,12 @@
 .uit-count {
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .uit-count__count {
     color: $c-red;
+    font-family: 'Guardian Figures';
+    font-weight: normal;
+    font-size: 40px;
 }
