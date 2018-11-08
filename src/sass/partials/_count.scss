@@ -1,5 +1,11 @@
 .uit-count {
     border-top: 1px solid $c-light-grey;
+
+    .uit-content {
+        @include mq(desktop) {
+            max-width: 780px;
+        }
+    }
 }
 
 .uit-count__result-line {
