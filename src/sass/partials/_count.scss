@@ -1,8 +1,11 @@
 .uit-count {
+    border-top: 1px solid $c-light-grey;
+}
+
+.uit-count__result-line {
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
     font-size: 24px;
-    border-top: 1px solid $c-light-grey;
 }
 
 .uit-count__count {
