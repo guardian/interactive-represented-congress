@@ -5,7 +5,15 @@
                 <span class='uit-count__count'></span> people in congress are like you
             </h2>
 
-            {{> partials/map-compiled }}
+
+            <div class='uit-map'>
+                <div class='uit-map__tooltip'>
+                    <h3 class='uit-map__tooltip-name'>Name <span class='uit-map__tooltip-party'>(P)</span></h3>
+                    <h3 class='uit-map__tooltip-seat'>Seat name</h3>
+                </div>
+
+                {{> partials/map-compiled }}
+            </div>
         </div>
     </div>
 </div>

@@ -33,8 +33,6 @@ module.exports =  {
             settings[settingName] = selected;
         }.bind(this));
 
-        console.log(settings);
-
         this.filterStates();
     },
 
