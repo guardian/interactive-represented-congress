@@ -24,6 +24,8 @@
 
 .uit-map__tooltip {
     position: absolute;
+    z-index: 10;
+    background-color: $c-white;
     border: 1px solid $c-black;
     box-shadow: 2px 2px $c-black;
     width: 220px;
