@@ -8,15 +8,48 @@
     }
 }
 
-.uit-count__result-line {
-    font-family: 'Guardian Egyptian Web';
-    font-weight: 700;
-    font-size: 24px;
-}
-
 .uit-count__count {
     color: $c-red;
     font-family: 'Guardian Figures';
     font-weight: normal;
     font-size: 40px;
+    line-height: 1;
+
+    @include mq(leftCol) {
+        display: block;
+        font-size: 60px;
+        margin-bottom: -5px;
+    }
+}
+
+.uit-count__intro {
+    @include mq(leftCol) {
+        position: absolute;
+        top: 0;
+        left: -160px;
+        max-width: 140px;
+    }
+
+    @include mq(wide) {
+        left: -240px;
+        max-width: 220px;
+    }
+}
+
+.uit-count__title {
+    margin: 0;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1;
+    padding-top: 4px;
+}
+
+.uit-count__description {
+    font-family: 'Guardian Text Egyptian Web';
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-dark-grey;
+    font-weight: normal;
+    margin: 2px 0 6px;
 }

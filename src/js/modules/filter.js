@@ -1,4 +1,5 @@
-var settings = {};
+var settings = {},
+    timer, count, target;
 
 module.exports =  {
     init: function() {
@@ -43,7 +44,6 @@ module.exports =  {
                 if ($(el) && $(el)[0].hasAttribute('data-' + i)) {
                     if (settings[i] !== "" && settings[i] !== $(el).data(i)) {
                         $(el).addClass('is-filtered');
-                        console.log($(el));
                     }
                 } else {
                     // this can be removed when data is complete
@@ -56,7 +56,28 @@ module.exports =  {
     },
 
     updateCount: function() {
-        var count = 537 - ($('.is-filtered').length + 1);
+        target = 537 - ($('.is-filtered').length + 1);
+
+        if (!count) {
+            count = target;
+        }
+
+        var delta = 500 / Math.abs(target - count);
+
+        if (timer == undefined) {
+            timer = setInterval(this.changeCount, delta.toFixed(1));
+        }
+    },
+
+    changeCount: function() {
+        if (count === target) {
+            window.clearInterval(timer);
+            timer = undefined;
+        } else if (count > target) {
+            count--;
+        } else {
+            count++;
+        }
 
         $('.uit-count__count').text(count);
     }

@@ -22,6 +22,12 @@
     }
 }
 
+.uit-map__svg {
+    @include mq(leftCol) {
+        margin-top: 6px;
+    }
+}
+
 .uit-map__tooltip {
     position: absolute;
     z-index: 10;
