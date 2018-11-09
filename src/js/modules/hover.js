@@ -1,6 +1,13 @@
+var mapPosition;
+
 module.exports =  {
     init: function() {
+        this.setMapPosition();
         this.bindings();
+    },
+
+    setMapPosition: function() {
+        mapPosition = $('.uit-map').offset();
     },
 
     bindings: function() {
@@ -11,15 +18,12 @@ module.exports =  {
 
     showToolTipFor: function(el) {
         var data = $(el).data();
-        var coords = $(el)[0].getBoundingClientRect();
-
-        console.log(coords);
+        var pointPosition = $(el).offset();
 
         $('.uit-map__tooltip').css({
-            top: coords.y,
-            left: coords.x
-        })
-
+            top: pointPosition.top - mapPosition.top,
+            left: pointPosition.left - mapPosition.left
+        });
 
         $('.uit-map__tooltip').addClass('is-visible');;
 
