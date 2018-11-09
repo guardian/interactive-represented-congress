@@ -69,6 +69,27 @@ function compileChamber(chamber) {
     return compiledSeats;
 }
 
+function appendMissingSenators() {
+    for (var i in data.demographics.senate) {
+        var senator = data.demographics.senate[i];
+        var append = true;
+
+        for (var d in data.compiled.senate) {
+            if (data.compiled.senate[d].seat === senator.seat) {
+                console.log('we already have ' + senator.fullName);
+                append = false; 
+            }
+        }
+
+        if (append) {
+            console.log('appending ' + senator.fullName);
+            data.compiled.senate.push(senator);
+        }
+    }
+
+    return data.compiled.senate;
+}
+
 function calculateAgeRange(age) {
     if (age >= 65) {
         return 'Over 65'
@@ -95,7 +116,6 @@ function mapData(chamber) {
         } else {
             console.log('Can\'t find ' + seat.seat + ' in map');
         }
-
     }
 }
 
@@ -122,6 +142,10 @@ function getData() {
         data.compiled.senate = compileChamber('senate');
         console.log('buildling house demographics list...');
         data.compiled.house = compileChamber('house');
+
+        data.compiled.senate = appendMissingSenators();
+
+        console.log(data.compiled.senate);
 
         var map = fs.readFileSync('./src/templates/partials/map.html');
             $ = cheerio.load(map);
