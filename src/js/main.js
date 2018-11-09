@@ -2,9 +2,11 @@
 window.$ = require('./vendor/jquery.js');
 
 var share = require('./modules/share.js');
+var map = require('./modules/map.js');
 var filter = require('./modules/filter.js');
 var hover = require('./modules/hover.js');
 
 share.init();
+map.init();
 filter.init();
 hover.init();
