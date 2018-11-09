@@ -16,6 +16,10 @@ module.exports =  {
                 this.showToolTipFor(e.currentTarget);
             }
         }.bind(this));
+
+        $(window).resize(function() {
+            this.setMapPosition();
+        }.bind(this));
     },
 
     showToolTipFor: function(el) {
