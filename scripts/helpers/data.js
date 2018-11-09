@@ -76,13 +76,11 @@ function appendMissingSenators() {
 
         for (var d in data.compiled.senate) {
             if (data.compiled.senate[d].seat === senator.seat) {
-                console.log('we already have ' + senator.fullName);
                 append = false; 
             }
         }
 
         if (append) {
-            console.log('appending ' + senator.fullName);
             data.compiled.senate.push(senator);
         }
     }
@@ -144,8 +142,6 @@ function getData() {
         data.compiled.house = compileChamber('house');
 
         data.compiled.senate = appendMissingSenators();
-
-        console.log(data.compiled.senate);
 
         var map = fs.readFileSync('./src/templates/partials/map.html');
             $ = cheerio.load(map);
