@@ -92,10 +92,12 @@ function appendMissingSenators() {
 function calculateAgeRange(age) {
     if (age >= 65) {
         return 'Over 65'
-    } else if (age >= 45) {
-        return '45-64'
+    } else if (age >= 50) {
+        return '50-64'
+    } else if (age >= 35) {
+        return '35-49';
     } else {
-        return 'Under 45'
+        return 'Under 35';
     }
 }
 
