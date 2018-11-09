@@ -12,6 +12,14 @@ var us = {
         '35-49': 31.28,
         '50-64': 28.83,
         'Over 65': 19.75
+    },
+
+    'ethnicity': {
+        'Hispanic': 16.3,
+        'Black': 12.6,
+        'Asian': 4.8,
+        'White': 72.4,
+        'Native American': 0.9
     }
 }
 
