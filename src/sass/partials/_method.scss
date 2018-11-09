@@ -1,0 +1,22 @@
+.uit-method {
+    font-family: 'Guardian Sans Web';
+    color: $c-grey;
+
+    .uit-content {
+        background-image: linear-gradient(to right, $c-light-grey 50%, transparent 0%);
+        background-size: 10px 1px;
+        background-position: left top;
+        background-repeat: repeat-x;
+        padding-top: 3px;
+    }
+
+    p,
+    h2 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    p {
+        padding-bottom: 12px;
+    }
+}
