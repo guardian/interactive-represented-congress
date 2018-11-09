@@ -101,6 +101,15 @@ function calculateAgeRange(age) {
     }
 }
 
+function capitalise(str) {
+    return str.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+
 function mapData(chamber) {
     for (var i in data.compiled[chamber]) {
         var seat = data.compiled[chamber][i];
@@ -110,7 +119,7 @@ function mapData(chamber) {
             $seat.attr('data-name', seat.fullName);
             $seat.attr('data-party', seat.party);
             $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
-            $seat.attr('data-ethnicity', seat.ethnicity);
+            $seat.attr('data-ethnicity', capitalise(seat.ethnicity));
             $seat.attr('data-age', calculateAgeRange(seat.age));
             $seat.attr('data-religion', seat.religion);
             $seat.attr('data-orientation', seat.orientation === 'straight' ? 'Straight' : 'LGB');

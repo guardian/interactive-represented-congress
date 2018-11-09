@@ -47,6 +47,7 @@ module.exports =  {
                     }
                 } else {
                     // this can be removed when data is complete
+                    console.log($(el).attr('id') + ' is missing info on ' + i);
                     $(el).addClass('is-filtered');
                 }
             }
