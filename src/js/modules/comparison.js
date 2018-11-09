@@ -4,8 +4,8 @@ var us = {
         'Female': 50.8
     },
     'orientation': {
-        'Straight': 97,
-        'LGB': 3
+        'Straight': 95.5,
+        'LGB': 4.5
     },
     'age': {
         'Under 35': 20.14,
@@ -61,9 +61,7 @@ module.exports =  {
         var count = 0;
 
         if (party) {
-            console.log(total);
             total = $('.uit-map path[data-party=' + party + ']').length;
-            console.log(total);
         }
 
         $('.uit-map path').each(function(i, el) {
