@@ -81,6 +81,7 @@ function appendMissingSenators() {
         }
 
         if (append) {
+            senator.party = senator.party.toUpperCase().charAt(0);
             data.compiled.senate.push(senator);
         }
     }
