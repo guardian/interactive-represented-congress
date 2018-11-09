@@ -84,11 +84,13 @@ function mapData(chamber) {
         var $seat = $('#' + (chamber === 'senate' ? 'SN_' : '') +  seat.seat);
 
         if ($seat.length > 0) {
-            $seat.attr('data-gender', seat.gender);
+            $seat.attr('data-name', seat.name);
+            $seat.attr('data-party', seat.party);
+            $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
             $seat.attr('data-ethnicity', seat.ethnicity);
             $seat.attr('data-age', calculateAgeRange(seat.age));
             $seat.attr('data-religion', seat.religion);
-            $seat.attr('data-orientation', seat.orientation === 'straight' ? 'straight' : 'LGB');
+            $seat.attr('data-orientation', seat.orientation === 'straight' ? 'Straight' : 'LGB');
         } else {
             console.log('Can\'t find ' + seat.seat + ' in map');
         }
