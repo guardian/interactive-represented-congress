@@ -52,11 +52,11 @@
 .uit-map__tooltip-party {
     color: $c-dark-purple;
 
-    .is-dem & {
+    &.is-D {
         color: $c-blue;
     }
 
-    .is-rep & {
+    &.is-R {
         color: $c-red;
     }
 }

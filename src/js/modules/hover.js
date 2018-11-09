@@ -18,6 +18,12 @@ module.exports =  {
 
     showToolTipFor: function(el) {
         var data = $(el).data();
+
+        $('.uit-map__tooltip-name').text(data.name);
+        $('.uit-map__tooltip-party').addClass('is-' + data.party);
+        $('.uit-map__tooltip-party').text('(' + data.party + ')');
+        $('.uit-map__tooltip-seat').text($(el).attr('id'));
+
         var pointPosition = $(el).offset();
 
         $('.uit-map__tooltip').css({
@@ -25,9 +31,10 @@ module.exports =  {
             left: pointPosition.left - mapPosition.left
         });
 
-        $('.uit-map__tooltip').addClass('is-visible');;
+        $('.uit-map__tooltip').addClass('is-visible');
 
         $(el).one('mouseout', function() {
+            $('.uit-map__tooltip-party').removeClass().addClass('uit-map__tooltip-party');
             $('.uit-map__tooltip').removeClass('is-visible');
         });
     }

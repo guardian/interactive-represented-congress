@@ -52,6 +52,7 @@ function compileChamber(chamber) {
             for (var d in data.demographics[chamber]) {
                 if (seat.winner === data.demographics[chamber][d].fullName) {
                     seatDemographic = data.demographics[chamber][d];
+                    seatDemographic.party = data.results[chamber][i].party;
                 }
             }
 
@@ -84,7 +85,7 @@ function mapData(chamber) {
         var $seat = $('#' + (chamber === 'senate' ? 'SN_' : '') +  seat.seat);
 
         if ($seat.length > 0) {
-            $seat.attr('data-name', seat.name);
+            $seat.attr('data-name', seat.fullName);
             $seat.attr('data-party', seat.party);
             $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
             $seat.attr('data-ethnicity', seat.ethnicity);
