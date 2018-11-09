@@ -1,0 +1,56 @@
+<div class='uit-comparison'>
+    <div class='uit-container'>
+        <div class='uit-content'>
+            <div class='uit-comparison__intro'>
+                <h2 class='uit-comparison__title'>Compared to the US</h2>
+                <p class='uit-comparison__description'>How does congress compare to the rest of the US</p>
+            </div>
+
+            <div class='uit-comparison__group' data-set='gender'>
+                <div class='uit-comparison__filters'>
+                    <span class='uit-comparison__filter-title'>Gender</span>
+                    <span class='uit-comparison__filter is-selected'>Male</span>
+                    <span class='uit-comparison__filter'>Female</span>
+                </div>
+
+                {{> partials/comparison-charts }}
+            </div>
+
+            <div class='uit-comparison__group' data-set='orientation'>
+                <div class='uit-comparison__filters'>
+                    <span class='uit-comparison__filter-title'>Orientation</span>
+                    <span class='uit-comparison__filter is-selected'>Straight</span>
+                    <span class='uit-comparison__filter'>LGB</span>
+                </div>
+
+                {{> partials/comparison-charts }}
+            </div>
+
+            <div class='uit-comparison__group' data-set='age'>
+                <div class='uit-comparison__filters'>
+                    <span class='uit-comparison__filter-title'>Age</span>
+                    <span class='uit-comparison__filter is-selected'>Under 35</span>
+                    <span class='uit-comparison__filter'>35-49</span>
+                    <span class='uit-comparison__filter'>50-64</span>
+                    <span class='uit-comparison__filter'>Over 65</span>
+
+                </div>
+
+                {{> partials/comparison-charts }}
+            </div>
+
+            <div class='uit-comparison__group' data-set='ethnicity'>
+                <div class='uit-comparison__filters'>
+                    <span class='uit-comparison__filter-title'>Ethnicity</span>
+                    <span class='uit-comparison__filter is-selected'>White</span>
+                    <span class='uit-comparison__filter'>Hispanic</span>
+                    <span class='uit-comparison__filter'>Black</span>
+                    <span class='uit-comparison__filter'>Asian</span>
+                    <span class='uit-comparison__filter'>Native American</span>
+                </div>
+
+                {{> partials/comparison-charts }}
+            </div>
+        </div>
+    </div>
+</div>

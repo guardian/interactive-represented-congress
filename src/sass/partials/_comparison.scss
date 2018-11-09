@@ -1,0 +1,115 @@
+.uit-comparison {
+    border-top: 1px solid $c-light-grey;
+
+    .uit-content {
+        @include mq(desktop) {
+            max-width: 780px;
+        }
+    }
+}
+
+.uit-comparison__title {
+    margin: 0;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1;
+    padding-top: 4px;
+}
+
+.uit-comparison__description {
+    font-family: 'Guardian Text Egyptian Web';
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-dark-grey;
+    font-weight: normal;
+    margin: 2px 0 6px;
+}
+
+.uit-comparison__group {
+    padding-bottom: 12px;
+}
+
+.uit-comparison__filters {
+    padding: 3px 0 6px;
+    border-top: 1px solid $c-light-grey;
+}
+
+.uit-comparison__filter-title {
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+    color: $c-dark-grey;
+    display: inline-block;
+    width: 80px;
+}
+
+.uit-comparison__filter {
+    background-color: $c-light-grey;
+    padding: 0 3px 1px;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: $c-grey;
+        cursor: pointer;
+    }
+
+    &.is-selected {
+        color: $c-white;
+        background-color: $c-red;
+    }
+}
+
+.uit-comparison__charts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, $c-light-grey 50%, transparent 0%);
+    background-size: 10px 1px;
+    background-position: left top;
+    background-repeat: repeat-x;
+    padding-top: 3px;
+}
+
+.uit-comparison__chart {
+    position: relative;
+    width: calc(25% - 15px);
+}
+
+.uit-comparison__percentage {
+    color: $c-red;
+    margin: 0;
+    text-align: right;
+    font-family: 'Guardian Figures';
+    font-size: 24px;
+}
+
+.uit-comparison__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $c-black;
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+}
+
+.uit-comparison__area {
+    position: relative;
+    padding-top: 100%;
+    height: 0;
+    background-color: $c-white;
+    border: 1px dashed $c-light-grey;
+}
+
+.uit-comparison__match-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.4s ease-out;
+    transform: scale(.5);
+    background-color: $c-red;
+}
