@@ -12,7 +12,9 @@ module.exports =  {
 
     bindings: function() {
         $('.uit-map path').mouseover(function(e) {
-            this.showToolTipFor(e.currentTarget);
+            if (!$(e.currentTarget).hasClass('is-filtered')) {
+                this.showToolTipFor(e.currentTarget);
+            }
         }.bind(this));
     },
 
