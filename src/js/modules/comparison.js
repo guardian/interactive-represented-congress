@@ -20,6 +20,14 @@ var us = {
         'Asian': 4.8,
         'White': 72.4,
         'Native American': 0.9
+    },
+
+    'religion': {
+        'Christian': 69,
+        'Jewish': 1.9,
+        'Hindu': 0.7,
+        'Muslim': 0.9,
+        'Mormon': 1.6
     }
 }
 
