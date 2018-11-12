@@ -1,7 +1,8 @@
 var us = {
     'gender': {
         'Male': 49.2,
-        'Female': 50.8
+        'Female': 50.8,
+        'Transgender': 0.6
     },
     'orientation': {
         'Straight': 95.5,
