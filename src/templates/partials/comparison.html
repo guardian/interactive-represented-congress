@@ -2,7 +2,7 @@
     <div class='uit-container'>
         <div class='uit-content'>
             <div class='uit-comparison__intro'>
-                <h2 class='uit-comparison__title'>Compared to the US</h2>
+                <h2 class='uit-comparison__title'>Compared to the&nbsp;US</h2>
                 <p class='uit-comparison__description'>How does congress compare to the rest of the US</p>
             </div>
 
@@ -47,6 +47,19 @@
                     <span class='uit-comparison__filter'>Black</span>
                     <span class='uit-comparison__filter'>Asian</span>
                     <span class='uit-comparison__filter'>Native American</span>
+                </div>
+
+                {{> partials/comparison-charts }}
+            </div>
+
+            <div class='uit-comparison__group' data-set='religion'>
+                <div class='uit-comparison__filters'>
+                    <span class='uit-comparison__filter-title'>Religion</span>
+                    <span class='uit-comparison__filter is-selected'>Christian</span>
+                    <span class='uit-comparison__filter'>Jewish</span>
+                    <span class='uit-comparison__filter'>Hindu</span>
+                    <span class='uit-comparison__filter'>Muslim</span>
+                    <span class='uit-comparison__filter'>Mormon</span>
                 </div>
 
                 {{> partials/comparison-charts }}
