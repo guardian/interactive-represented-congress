@@ -111,6 +111,7 @@ function capitalise(str) {
 }
 
 function mapData(chamber) {
+    console.log('hooking up with map');
     for (var i in data.compiled[chamber]) {
         var seat = data.compiled[chamber][i];
         var $seat = $('#' + (chamber === 'senate' ? 'SN_' : '') +  seat.seat);
