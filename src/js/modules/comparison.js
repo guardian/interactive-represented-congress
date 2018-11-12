@@ -27,7 +27,9 @@ var us = {
         'Jewish': 1.9,
         'Hindu': 0.7,
         'Muslim': 0.9,
-        'Mormon': 1.6
+        'Mormon': 1.6,
+        'Buddhist': 0.7,
+        'Non-religious': 7.1
     }
 }
 
