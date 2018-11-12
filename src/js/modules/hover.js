@@ -25,11 +25,19 @@ module.exports =  {
 
     showToolTipFor: function(el) {
         var data = $(el).data();
+        var declared = $(el).hasClass('is-declared');
 
-        $('.uit-map__tooltip-name').text(data.name);
-        $('.uit-map__tooltip-party').addClass('is-' + data.party);
-        $('.uit-map__tooltip-party').text('(' + data.party + ')');
-        $('.uit-map__tooltip-seat').text(this.formatSeat($(el).attr('id')));
+        console.log($(el));
+
+        if (declared) {
+            $('.uit-map__tooltip-name').text(data.name);
+            $('.uit-map__tooltip-party').addClass('is-' + data.party);
+            $('.uit-map__tooltip-party').text('(' + data.party + ')');
+            $('.uit-map__tooltip-seat').text(this.formatSeat($(el).attr('id')));
+        } else {
+            $('.uit-map__tooltip-name').text('Race undeclared');
+            $('.uit-map__tooltip-party').text('');
+        }
 
         var pointPosition = $(el).offset();
 

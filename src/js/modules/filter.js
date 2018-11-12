@@ -38,7 +38,7 @@ module.exports =  {
 
     filterStates: function() {
         $('.is-filtered').removeClass('is-filtered');
-        $('.uit-map path').each(function(i, el) {
+        $('.uit-map .is-declared').each(function(i, el) {
             for (var i in settings) {
                 if ($(el) && $(el)[0].hasAttribute('data-' + i)) {
                     if (settings[i] !== "" && settings[i] !== $(el).data(i)) {
