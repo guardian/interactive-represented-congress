@@ -6,7 +6,7 @@ module.exports =  {
     setMapDelay: function() {
         var width = $('.uit-map').width();
 
-        $('.uit-map path').each(function(i, el) {
+        $('.uit-map .is-declared').each(function(i, el) {
             var y = $(el)[0].getBBox().x;
 
             $(el).css({

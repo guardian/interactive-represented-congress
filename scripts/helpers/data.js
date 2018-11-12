@@ -62,6 +62,23 @@ function compileChamber(chamber) {
                 console.log('no match for ' + seat.winner + ' in ' + seat.seat);
             }
         } else {
+            var seatCode = seat.seat;
+
+            if (seatCode == 'CA39') {
+                seatCode = 'CA039';
+            } else if (seatCode == 'CA45') {
+                seatCode = 'CA045';
+            } else if (seatCode == 'CA10') {
+                seatCode = 'CA010';
+            } else if (seatCode == 'NY27') {
+                seatCode = 'NY027';
+            }
+
+            compiledSeats.push({
+                seat: seatCode,
+                isUndeclared: true
+            });
+
             console.log('no winner for ' + seat.seat);
         }
     }
@@ -117,13 +134,18 @@ function mapData(chamber) {
         var $seat = $('#' + (chamber === 'senate' ? 'SN_' : '') +  seat.seat);
 
         if ($seat.length > 0) {
-            $seat.attr('data-name', seat.fullName);
-            $seat.attr('data-party', seat.party);
-            $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
-            $seat.attr('data-ethnicity', capitalise(seat.ethnicity));
-            $seat.attr('data-age', calculateAgeRange(seat.age));
-            $seat.attr('data-religion', findBroaderReligion(seat.religion));
-            $seat.attr('data-orientation', seat.orientation === 'straight' ? 'Straight' : 'LGB');
+            if (seat.isUndeclared) {
+                $seat.addClass('is-undeclared');
+            } else {
+                $seat.addClass('is-declared');
+                $seat.attr('data-name', seat.fullName);
+                $seat.attr('data-party', seat.party);
+                $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
+                $seat.attr('data-ethnicity', capitalise(seat.ethnicity));
+                $seat.attr('data-age', calculateAgeRange(seat.age));
+                $seat.attr('data-religion', findBroaderReligion(seat.religion));
+                $seat.attr('data-orientation', seat.orientation === 'straight' ? 'Straight' : 'LGB');
+            }
         } else {
             console.log('Can\'t find ' + seat.seat + ' in map');
         }

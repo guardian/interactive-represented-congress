@@ -17,8 +17,23 @@
         }
     }
 
+    &.is-undeclared {
+        fill: url(#uit-hatch);
+    }
+
     &:hover {
         fill: $c-black;
+    }
+}
+
+#uit-hatch {
+    rect {
+        fill: $c-white;
+    }
+
+    path {
+        stroke: $c-red;
+        stroke-width: .5;
     }
 }
 

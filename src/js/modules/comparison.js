@@ -76,11 +76,11 @@ module.exports =  {
     },
 
     getCongressCount: function(group, filter, party = null) {
-        var total = $('.uit-map path').length;
+        var total = $('.uit-map .is-declared').length;
         var count = 0;
 
         if (party) {
-            total = $('.uit-map path[data-party=' + party + ']').length;
+            total = $('.uit-map .is-declared[data-party=' + party + ']').length;
         }
 
         $('.uit-map path').each(function(i, el) {
