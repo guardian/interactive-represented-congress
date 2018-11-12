@@ -8,6 +8,20 @@
     }
 }
 
+.uit-comparison__intro {
+    @include mq(leftCol) {
+        position: absolute;
+        top: 0;
+        left: -160px;
+        max-width: 140px;
+    }
+
+    @include mq(wide) {
+        left: -240px;
+        max-width: 220px;
+    }
+}
+
 .uit-comparison__title {
     margin: 0;
     font-family: 'Guardian Egyptian Web';
