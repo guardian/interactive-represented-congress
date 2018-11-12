@@ -45,11 +45,23 @@
     padding-top: 4px;
 }
 
-.uit-count__description {
-    font-family: 'Guardian Text Egyptian Web';
+.uit-count__keys {
+    font-family: 'Guardian Sans Web';
     font-size: 14px;
     line-height: 20px;
-    color: $c-dark-grey;
+    color: $c-black;
     font-weight: normal;
-    margin: 2px 0 6px;
+    margin: 6px 0 6px;
+}
+
+.uit-key {
+    float: left;
+    width: 1em;
+    margin-right: 4px;
+}
+
+.uit-key__hex {
+    fill: url(#uit-hatch);
+    stroke: $c-red;
+    stroke-width: .5;
 }
