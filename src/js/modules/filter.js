@@ -1,5 +1,4 @@
-var settings = {},
-    timer, count, target;
+var settings = {};
 
 module.exports =  {
     init: function() {
@@ -57,29 +56,18 @@ module.exports =  {
     },
 
     updateCount: function() {
-        target = 537 - ($('.is-filtered').length + 1);
+        var target = 537 - ($('.is-filtered').length + 1);
 
-        if (!count) {
-            count = target;
-        }
+        $({count: $('.uit-count__count').text() }).animate({count: target}, {
+            duration: 600,
+            easing:'linear',
+            step: function() {
+                $('.uit-count__count').text(Math.floor(this.count));
+            },
+            complete: function() {
+                $('.uit-count__count').text(target);
+            }
+        });
 
-        var delta = 500 / Math.abs(target - count);
-
-        if (timer == undefined) {
-            timer = setInterval(this.changeCount, delta.toFixed(1));
-        }
-    },
-
-    changeCount: function() {
-        if (count === target) {
-            window.clearInterval(timer);
-            timer = undefined;
-        } else if (count > target) {
-            count--;
-        } else {
-            count++;
-        }
-
-        $('.uit-count__count').text(count);
     }
 };
