@@ -56,7 +56,7 @@ module.exports =  {
     },
 
     updateCount: function() {
-        var target = 537 - ($('.is-filtered').length + 1);
+        var target = ($('.is-declared').not('.is-filtered').length);
 
         $({count: $('.uit-count__count').text() }).animate({count: target}, {
             duration: 600,

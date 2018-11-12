@@ -27,8 +27,6 @@ module.exports =  {
         var data = $(el).data();
         var declared = $(el).hasClass('is-declared');
 
-        console.log($(el));
-
         if (declared) {
             $('.uit-map__tooltip-name').text(data.name);
             $('.uit-map__tooltip-party').addClass('is-' + data.party);
