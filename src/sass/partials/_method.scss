@@ -19,4 +19,14 @@
     p {
         padding-bottom: 12px;
     }
+
+    a {
+        color: $c-dark-grey;
+        border-bottom: 1px solid $c-light-grey;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom-color: $c-red;
+        }
+    }
 }
