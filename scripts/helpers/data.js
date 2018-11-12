@@ -122,11 +122,33 @@ function mapData(chamber) {
             $seat.attr('data-gender', seat.gender === 'male' ? 'Male' : 'Female');
             $seat.attr('data-ethnicity', capitalise(seat.ethnicity));
             $seat.attr('data-age', calculateAgeRange(seat.age));
-            $seat.attr('data-religion', seat.religion);
+            $seat.attr('data-religion', findBroaderReligion(seat.religion));
             $seat.attr('data-orientation', seat.orientation === 'straight' ? 'Straight' : 'LGB');
         } else {
             console.log('Can\'t find ' + seat.seat + ' in map');
         }
+    }
+}
+
+function findBroaderReligion(religion) {
+    if (religion === 'african-methodist' || religion === 'anglican' || religion === 'baptist' || religion === 'catholic' || religion === 'christian' || religion === 'church-of-christ' || religion === 'church-of-god' || religion === 'congregationalist' || religion === 'eastern-orthodox' || religion === 'episcopalian' || religion === 'evangelical' || religion === 'lutheran' || religion === 'methodist' || religion === 'nazarene-christian' || religion === 'pentecostal' || religion === 'protestant' || religion === 'roman-catholic' || religion === 'seventh-day-adventist-church' || religion === 'southern-baptist' || religion === 'unitarian-universalist' || religion === 'united-methodist' || religion === 'christian-reformed' || religion === 'presbyterian' || religion === 'evangelical-lutheran' || religion === 'united-church-of-christ') {
+        return 'Christian';
+    } else if (religion === 'hindu') {
+        return 'Hindu';
+    } else if (religion === 'jewish') {
+        return 'Jewish';
+    } else if (religion === 'mormon') {
+        return 'Mormon';
+    } else if (religion === 'muslim') {
+        return 'Muslim';
+    } else if (religion === 'soka-gakkai-buddhist' || religion === 'buddhism') {
+        return 'Buddhist';
+    } else if (religion === 'humanist' || religion === 'agnostic') {
+        return 'Non-religious';
+    } else if (religion === 'unspecified' || religion === 'deist' || religion === 'N/A' || religion == 'unspecified/don\'t know/refused' || religion === 'unaffiliated') {
+        return 'unspecified';
+    } else {
+        console.log('new religion discovered! ' + religion);
     }
 }
 
