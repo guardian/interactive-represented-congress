@@ -11,7 +11,7 @@
 .uit-comparison__intro {
     @include mq(leftCol) {
         position: absolute;
-        top: 0;
+        top: -100px;
         left: -160px;
         max-width: 140px;
     }
@@ -47,13 +47,24 @@
 .uit-comparison__filters {
     padding: 3px 0 6px;
     border-top: 1px solid $c-light-grey;
+
+    @include mq(leftCol) {
+        position: absolute;
+        left: -160px;
+        max-width: 140px;
+    }
+
+    @include mq(wide) {
+        left: -240px;
+        max-width: 220px;
+    }
 }
 
 .uit-comparison__filter-title {
     font-family: 'Guardian Sans Web';
     font-size: 16px;
     color: $c-black;
-    display: inline-block;
+    display: block;
     width: 80px;
 }
 
@@ -76,15 +87,23 @@
     }
 }
 
+.uit-comparison__copy {
+    border-top: 1px solid $c-light-grey;
+    @include mq(leftCol) {
+        margin-top: 100px;
+    }
+
+}
+
 .uit-comparison__charts {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(to right, $c-light-grey 50%, transparent 0%);
+    //background-image: linear-gradient(to right, $c-light-grey 50%, transparent 0%);
     background-size: 10px 1px;
     background-position: left top;
     background-repeat: repeat-x;
-    padding-top: 3px;
+    padding-top: 20px;
 }
 
 .uit-comparison__chart {
