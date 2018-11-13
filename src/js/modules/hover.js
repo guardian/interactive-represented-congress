@@ -37,10 +37,11 @@ module.exports =  {
             $('.uit-map__tooltip-party').text('');
         }
 
-        var pointPosition = $(el).offset();
+        var oldPointPosition = $(el).offset();
+        var pointPosition = el.getBoundingClientRect();
 
         $('.uit-map__tooltip').css({
-            top: pointPosition.top - mapPosition.top,
+            top: pointPosition.top - (mapPosition.top - $(window).scrollTop()),
             left: pointPosition.left - mapPosition.left
         });
 
