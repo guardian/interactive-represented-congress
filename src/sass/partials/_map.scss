@@ -23,6 +23,7 @@
 
     &:hover {
         fill: $c-black;
+        transition-delay: 0s !important;
     }
 }
 
