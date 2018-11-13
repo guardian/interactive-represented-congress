@@ -108,6 +108,21 @@
 
 }
 
+.uit-comparison__intro_copy {
+    font-family: 'Guardian Text Egyptian Web';
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-black;
+    max-width: 620px;
+    padding-top: 6px;
+    top: -100px;
+    position: relative;
+    
+    @include mq(leftCol) {
+        margin-top: 100px;
+    }
+}
+
 .uit-comparison__charts {
     width: 100%;
     display: flex;
