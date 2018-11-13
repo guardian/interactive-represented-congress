@@ -18,6 +18,16 @@ module.exports =  {
             }
         }.bind(this));
 
+        $('.uit-map path').click(function(e) {
+            if (!$(e.currentTarget).hasClass('is-filtered')) {
+                this.showToolTipFor(e.currentTarget);
+            }
+        }.bind(this));
+
+        $('.uit-map__tooltip').click(function(e) {
+            $('.uit-map__tooltip').removeClass('is-visible');
+        }.bind(this));
+
         $(window).resize(function() {
             this.setMapPosition();
         }.bind(this));
@@ -39,10 +49,25 @@ module.exports =  {
 
         var oldPointPosition = $(el).offset();
         var pointPosition = el.getBoundingClientRect();
+        var tooltipLeft;
+
+        if ($(window).width() < 480) {
+            if (pointPosition.left - mapPosition.left < 100) {
+                tooltipLeft = (pointPosition.left - mapPosition.left) + 100;
+            }
+            else if(pointPosition.left - mapPosition.left > 285) {
+                tooltipLeft = (pointPosition.left - mapPosition.left) - 100;
+            }
+            else {
+                tooltipLeft = (pointPosition.left - mapPosition.left);
+            }
+        } else {
+            tooltipLeft = (pointPosition.left - mapPosition.left);
+        }
 
         $('.uit-map__tooltip').css({
             top: pointPosition.top - (mapPosition.top - $(window).scrollTop()),
-            left: pointPosition.left - mapPosition.left
+            left: tooltipLeft
         });
 
         $('.uit-map__tooltip').addClass('is-visible');
@@ -51,6 +76,10 @@ module.exports =  {
             $('.uit-map__tooltip-party').removeClass().addClass('uit-map__tooltip-party');
             $('.uit-map__tooltip').removeClass('is-visible');
         });
+    },
+
+    hideToolTipFor: function(el) {
+        $('.uit-map__tooltip').removeClass('is-visible');
     },
 
     formatSeat: function(id) {

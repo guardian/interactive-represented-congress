@@ -22,6 +22,7 @@ module.exports =  {
             $target.addClass('is-selected');
         }
 
+        $('.uit-map__tooltip').removeClass('is-visible');
         this.setSettings();
     },
 
