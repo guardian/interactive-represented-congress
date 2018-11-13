@@ -25,6 +25,7 @@ module.exports =  {
         }.bind(this));
 
         $('.uit-map__tooltip').click(function(e) {
+            $('.uit-map__tooltip-party').removeClass().addClass('uit-map__tooltip-party');
             $('.uit-map__tooltip').removeClass('is-visible');
         }.bind(this));
 
@@ -45,6 +46,7 @@ module.exports =  {
         } else {
             $('.uit-map__tooltip-name').text('Race undeclared');
             $('.uit-map__tooltip-party').text('');
+            $('.uit-map__tooltip-seat').text(this.formatSeat($(el).attr('id')));
         }
 
         var oldPointPosition = $(el).offset();
