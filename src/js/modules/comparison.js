@@ -1,8 +1,8 @@
 var us = {
     'gender': {
-        'Male': 49.2,
-        'Female': 50.8,
-        'Transgender M/F': 0.6
+        'Cis Male': 49.2,
+        'Cis Female': 50.8,
+        'Trans + Non-binary': 0.6
     },
     'orientation': {
         'Straight': 95.5,
@@ -20,7 +20,9 @@ var us = {
         'Black': 12.6,
         'Asian': 4.8,
         'White': 72.4,
-        'Native American': 0.9
+        'Native American': 0.9,
+        'Middle Eastern': 2.8,
+        'Multiracial': 2.9
     },
 
     'religion': {
