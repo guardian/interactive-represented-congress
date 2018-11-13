@@ -51,7 +51,7 @@ module.exports =  {
         var pointPosition = el.getBoundingClientRect();
         var tooltipLeft;
 
-        if ($(window).width < 480) {
+        if ($(window).width() < 480) {
             if (pointPosition.left - mapPosition.left < 100) {
                 tooltipLeft = (pointPosition.left - mapPosition.left) + 100;
             }
