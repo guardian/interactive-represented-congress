@@ -42,21 +42,28 @@
 
 .uit-comparison__group {
     padding-bottom: 24px;
+    background-image: linear-gradient(to right, #dcdcdc 50%, transparent 0%);
+    background-size: 10px 1px;
+    background-position: left top;
+    background-repeat: repeat-x;
 }
 
 .uit-comparison__filters {
     padding: 3px 0 6px;
-    border-top: 1px solid $c-light-grey;
 
     @include mq(leftCol) {
         position: absolute;
         left: -160px;
-        max-width: 140px;
+        width: 140px;
+        background-image: linear-gradient(to right, #dcdcdc 50%, transparent 0%);
+        background-size: 10px 1px;
+        background-position: left top;
+        background-repeat: repeat-x;
     }
 
     @include mq(wide) {
         left: -240px;
-        max-width: 220px;
+        width: 220px;
     }
 }
 
@@ -88,7 +95,13 @@
 }
 
 .uit-comparison__copy {
-    border-top: 1px solid $c-light-grey;
+    font-family: 'Guardian Text Egyptian Web';
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-black;
+    max-width: 620px;
+    padding-top: 6px;
+
     @include mq(leftCol) {
         margin-top: 100px;
     }
