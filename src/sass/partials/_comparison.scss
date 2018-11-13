@@ -11,7 +11,6 @@
 .uit-comparison__intro {
     @include mq(leftCol) {
         position: absolute;
-        top: -100px;
         left: -160px;
         max-width: 140px;
     }
@@ -41,7 +40,7 @@
 }
 
 .uit-comparison__group {
-    padding-bottom: 24px;
+    padding-bottom: 48px;
     background-image: linear-gradient(to right, #dcdcdc 50%, transparent 0%);
     background-size: 10px 1px;
     background-position: left top;
@@ -101,11 +100,7 @@
     color: $c-black;
     max-width: 620px;
     padding-top: 6px;
-
-    @include mq(leftCol) {
-        margin-top: 100px;
-    }
-
+    padding-bottom: 24px;
 }
 
 .uit-comparison__intro_copy {
@@ -115,12 +110,8 @@
     color: $c-black;
     max-width: 620px;
     padding-top: 6px;
-    top: -100px;
     position: relative;
-    
-    @include mq(leftCol) {
-        margin-top: 100px;
-    }
+    padding-bottom: 48px;
 }
 
 .uit-comparison__charts {
