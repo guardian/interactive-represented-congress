@@ -2,12 +2,32 @@
     overflow: auto;
 }
 
+.uit-header__logo {
+    padding-top: 6px;
+    max-width: 100px;
+
+    @include mq(tablet) {
+        max-width: 140px;
+    }
+
+    @include mq(leftCol) {
+        position: absolute;
+        left: -160px;
+        top: 4px;
+    }
+
+    @include mq(wide) {
+        left: -240px;
+    }
+}
+
 .uit-header__headline {
-    padding: 6px 0;
+    padding: 3px 0 6px;
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
     font-size: 24px;
     line-height: 1.1;
+    color: $c-black;
 
     @include mq(tablet) {
         font-size: 48px;
