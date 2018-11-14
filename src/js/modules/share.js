@@ -1,5 +1,5 @@
 var pageUrl = window.location.href.split('#')[0],
-    shareCopy = 'What a cool article #Article';
+    shareCopy = 'Are you reflected in the new Congress?';
 
 module.exports =  {
     init: function() {
@@ -13,7 +13,7 @@ module.exports =  {
     },
 
     getTwitterLink: function() {
-        return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) + 
+        return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) +
                 '&url=' + encodeURIComponent(pageUrl + '?CMP=share_btn_tw');
     },
 
