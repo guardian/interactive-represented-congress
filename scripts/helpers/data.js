@@ -140,7 +140,7 @@ function mapData(chamber) {
                 $seat.addClass('is-declared');
                 $seat.attr('data-name', seat.fullName);
                 $seat.attr('data-party', seat.party);
-                $seat.attr('data-gender', seat.gender === 'cis male' ? 'Cis Male' : 'Cis Female');
+                $seat.attr('data-gender', seat.gender === 'cis male' ? 'Cis male' : 'Cis female');
                 $seat.attr('data-ethnicity', capitalise(seat.ethnicity));
                 $seat.attr('data-age', calculateAgeRange(seat.age));
                 $seat.attr('data-religion', findBroaderReligion(seat.religion));
