@@ -1,7 +1,7 @@
 var us = {
     'gender': {
-        'Cis Male': 49.2,
-        'Cis Female': 50.8,
+        'Cis male': 49.2,
+        'Cis female': 50.8,
         'Trans + Non-binary': 0.6
     },
     'orientation': {
